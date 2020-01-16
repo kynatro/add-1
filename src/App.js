@@ -1,10 +1,19 @@
 import React, { createRef, Component } from 'react';
+import PropTypes from 'prop-types';
 import './App.scss';
 class App extends Component {
   static defaultProps = {
-    metronone: 1000,
     add: 1,
-    beatWait: 2
+    beatWait: 2,
+    metronone: 1000,
+    numberLength: 4
+  }
+
+  static propTypes = {
+    add: PropTypes.number.isRequired,
+    beatWait: PropTypes.number.isRequired,
+    metronone: PropTypes.number.isRequired,
+    numberLength: PropTypes.number.isRequired
   }
 
   constructor(props) {
