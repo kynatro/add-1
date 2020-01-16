@@ -73,7 +73,7 @@ class App extends Component {
     const { value } = event.target;
 
     this.setState({
-      input: value
+      inputValue: value
     });
   }
 
@@ -114,7 +114,7 @@ class App extends Component {
 
       if (inputValue !== '') {
         newState.inputStatus = (addNumber === parseInt(inputValue) ? '✅ Correct!' : '❌ Incorrect!') + ` (${addNumber})`;
-        newState.input = '';
+        newState.inputValue = '';
       }
     }
 
