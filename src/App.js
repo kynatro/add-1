@@ -62,7 +62,11 @@ class App extends Component {
   }
 
   baseNumber = () => {
-    return parseInt(Math.random() * (9999 - 1000) + 1000)
+    const { numberLength } = this.props;
+    const min = Math.pow(10, numberLength - 1);
+    const max = Math.pow(10, numberLength) - 1;
+
+    return parseInt(Math.random() * (max - min) + min)
   }
 
   handleInput = (event) => {
