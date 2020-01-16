@@ -98,16 +98,17 @@ class App extends Component {
     const { baseNumber, beat, inputValue, tick } = this.state;
     const { add, beatWait } = this.props;
     const addNumber = this.addNumber({ baseNumber, add });
+    const newBeat = (beat + 1) % (beatWait + 1);
     let newState = {
       tick: tick + 1,
-      beat: (beat + 1) % (beatWait + 1)
+      beat: newBeat
     };
 
-    if (beat === beatWait) {
+    if (newBeat === beatWait) {
       newState.inputDisabled = false;
     }
 
-    if (beat === 0) {
+    if (newBeat === 0) {
       newState.baseNumber = this.baseNumber();
       newState.inputDisabled = true;
       newState.inputStatus = null;
@@ -122,12 +123,16 @@ class App extends Component {
   }
 
   render() {
-    const { baseNumber, inputStatus } = this.state;
+    const { beat, baseNumber, inputStatus } = this.state;
     const { add, numberLength } = this.props;
 
     return (
       <div className="App">
         <h1>{baseNumber}</h1>
+
+        <div className="beat">
+          {new Array(beat+1).fill('•').map(bullet => bullet)}
+        </div>
 
         <div className="answer">
           {this.inputField()}
