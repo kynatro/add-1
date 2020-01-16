@@ -22,7 +22,7 @@ class App extends Component {
     this.state = {
       baseNumber: this.baseNumber(),
       beat: 0,
-      input: '',
+      inputValue: '',
       inputDisabled: true,
       inputStatus: null,
       tick: 0
@@ -78,11 +78,11 @@ class App extends Component {
   }
 
   inputField = () => {
-    const { input, inputDisabled } = this.state;
+    const { inputValue, inputDisabled } = this.state;
     const atts = {
       onChange: this.handleInput,
       ref: this.inputRef,
-      value: input
+      value: inputValue
     }
 
     if (inputDisabled) {
@@ -95,7 +95,7 @@ class App extends Component {
   }
 
   tick = () => {
-    const { baseNumber, beat, input, tick } = this.state;
+    const { baseNumber, beat, inputValue, tick } = this.state;
     const { add, beatWait } = this.props;
     const addNumber = this.addNumber({ baseNumber, add });
     let newState = {
@@ -112,8 +112,8 @@ class App extends Component {
       newState.inputDisabled = true;
       newState.inputStatus = null;
 
-      if (input !== '') {
-        newState.inputStatus = (addNumber === parseInt(input) ? '✅ Correct!' : '❌ Incorrect!') + ` (${addNumber})`;
+      if (inputValue !== '') {
+        newState.inputStatus = (addNumber === parseInt(inputValue) ? '✅ Correct!' : '❌ Incorrect!') + ` (${addNumber})`;
         newState.input = '';
       }
     }
