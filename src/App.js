@@ -123,18 +123,25 @@ class App extends Component {
 
   render() {
     const { baseNumber, inputStatus } = this.state;
+    const { add, numberLength } = this.props;
 
     return (
       <div className="App">
         <h1>{baseNumber}</h1>
 
-        {this.inputField()}
+        <div className="answer">
+          {this.inputField()}
+        </div>
         
         {inputStatus && (
           <div className="status">
             {inputStatus}
           </div>
         )}
+
+        <div className="instructions">
+          <p>Add {add} to each number in the {numberLength} digit number shown above.</p>
+        </div>
       </div>
     );
   }
