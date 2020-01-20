@@ -121,9 +121,9 @@ class Game extends Component {
     const { beat, baseNumber, inputStatus } = this.state;
 
     return (
-      <div className="game">
+      <div className="Game">
         <header>
-          <h2>{baseNumber}</h2>
+          <h2 className="number">{baseNumber}</h2>
         </header>
 
         <article>

@@ -1,0 +1,35 @@
+.Introduction {
+  padding: 24px;
+  width: 100%;
+  
+  @media (min-width: 540px) {
+    background: rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 4px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    margin-left: 24px;
+    margin-right: 24px;
+    max-width: 700px;
+  }
+
+  header {
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+    margin-bottom: 24px;
+
+    :first-child {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 8px;
+    }
+  }
+
+  footer {
+    text-align: center;
+
+    :last-child {
+      margin-bottom: 0;
+    }
+  }
+}

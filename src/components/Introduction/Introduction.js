@@ -9,7 +9,7 @@ export default ({ add, beatInput, beatInterval, beatWait, digitsAmount, handleSt
   const beatsPerSecond = beatInterval/1000;
   
   return (
-    <div className="introduction">
+    <div className="Introduction">
       <header>
         <h1>Add 1</h1>
       </header>
